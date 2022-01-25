@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mywork.mapper.ExcelTemplateMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.huangjun.util.excel.entity.ExcelTemplate">
+        <id column="id" property="id" />
+        <result column="excel_id" property="excelId" />
+        <result column="excel_name" property="excelName" />
+        <result column="sheet_name" property="sheetName" />
+        <result column="header_name" property="headerName" />
+        <result column="need_check" property="needCheck" />
+        <result column="rule_id" property="ruleId" />
+        <result column="column_num" property="columnNum" />
+        <result column="item_code" property="itemCode" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, excel_id, excel_name, sheet_name, header_name, need_check, rule_id,column_num,item_code
+    </sql>
+
+</mapper>

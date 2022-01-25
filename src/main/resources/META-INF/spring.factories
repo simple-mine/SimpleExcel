@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.huangjun.util.excel.config.ExcelConfiguration

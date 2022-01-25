@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangjun.util.excel.mapper.ExcelRuleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.huangjun.util.excel.entity.ExcelRule">
+        <id column="id" property="id" />
+        <result column="rule" property="rule" />
+        <result column="err_msg" property="errMsg" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, rule,err_msg
+    </sql>
+
+    <select id="getMapByIds" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM excel_rule
+        <where>
+            <foreach collection="ids" open="(" close=")" separator="," index="index" item="item">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+
+</mapper>
